@@ -68,7 +68,7 @@ JOIN categories ON products.category_id = categories.category_id
 where products.product_id = (
 	select product_id from products 
 	group by product_id 
-	order by count(*) desc LIMIT 1
+	order by products.unit_price desc LIMIT 1
 );
 
 --Write a query to get the suppliers name and contact number (`ProductID`, `ProductName`, `CompanyName`, `Phone`) along with the product list of out-of-stock items.
